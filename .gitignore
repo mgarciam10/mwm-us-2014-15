@@ -1,7 +1,5 @@
 # java compilation files #
-
 *.class
-
-# jdeveloper files #
+# jdeveloper project files #
 *.jpr
 *.jws
