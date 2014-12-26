@@ -1,4 +1,4 @@
-package main;
+package entity;
 
 import java.io.Serializable;
 
@@ -11,7 +11,7 @@ import javax.persistence.Version;
 @Entity
 @NamedQueries({ @NamedQuery(name = "CRLEmpleado.findAll", query = "select o from CRLEmpleado o") })
 public class CRLEmpleado implements Serializable {
-    private static final long serialVersionUID = 8309206441728834561L;
+    private static final long serialVersionUID = -5835461408228475242L;
     @Id
     private Integer id;
     @Version
