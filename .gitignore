@@ -1,5 +1,7 @@
-# java compilation files #
+# java compilation directories and files #
+**/classes/
 *.class
 # jdeveloper project files #
+**/.data/
 *.jpr
 *.jws
