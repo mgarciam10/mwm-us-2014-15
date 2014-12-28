@@ -7,6 +7,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
@@ -18,6 +20,8 @@ import javax.persistence.Version;
 public class CRLProyecto implements Serializable {
     private static final long serialVersionUID = -3881528019492249860L;
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="PROY_ID")
     private Integer id;
     @Version
     private Integer version;
@@ -60,5 +64,12 @@ public class CRLProyecto implements Serializable {
 
     public void setVersion(Integer version) {
         this.version = version;
+    }
+    
+    public void addEmpleado(CRLEmpleado emple) {
+            this.getSetEmpleados().add(emple);
+            if (!emple.getSetProyectos().contains(this)) {
+                 emple.getSetProyectos().add(this);
+            }
     }
 }

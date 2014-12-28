@@ -30,6 +30,7 @@ public class CRLEmpleado implements Serializable {
     private static final long serialVersionUID = -5835461408228475242L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="EMP_ID")
     private Integer id;
     @Version
     private Integer version;
@@ -37,7 +38,6 @@ public class CRLEmpleado implements Serializable {
     private String apellido;
     @Column(name="nombre", nullable = false, length = 50)
     private String nombre;
-    /*@Transient*/
     @Column(name="fechaalta", nullable = true)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaalta;
@@ -50,7 +50,7 @@ public class CRLEmpleado implements Serializable {
     @OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
     @JoinColumn(name="id_seguro")
     private CRLSeguroSanitario seguroSanitario;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(
     name="CRLEMP_PROY",
         joinColumns={
@@ -87,6 +87,13 @@ public class CRLEmpleado implements Serializable {
             this.setTelefonos.add(telef);
             if (telef.getEmpleado() != this) {
                 telef.setEmpleado(this);
+            }
+    }
+    
+    public void addProyecto(CRLProyecto proy) {
+            this.getSetProyectos().add(proy);
+            if (!proy.getSetEmpleados().contains(this)) {
+                 proy.getSetEmpleados().add(this);
             }
     }
     
