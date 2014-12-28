@@ -7,9 +7,9 @@ Scope: Web and Mobile Development
 
 Description: 
 
-	Mod1: Desktop | J2EE, JDBC, JPA, Hibernate | SGBD: Oracle | IDE: Jdeveloper 12.2
-	Mod2: Web |  | SGBD:  | IDE:
-	Mod3: Web Services |  | SGBD: | IDE:
-	Mod4: Mobile |  | SGBD: | IDE:
+	Mod1: Desktop | J2EE, JDBC, JPA, Hibernate | DBMS: Oracle | IDE: Jdeveloper 12.2
+	Mod2: Web |  | DBMS:  | IDE:
+	Mod3: Web Services |  | DBMS: | IDE:
+	Mod4: Mobile |  | DBMS: | IDE:
 
 
